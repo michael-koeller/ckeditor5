@@ -99,8 +99,10 @@ export default class AlignmentUI extends Plugin {
 				}
 			} );
 
+			// dermatest special: Change default alignment to 'justify'
 			// The default icon depends on the direction of the content.
-			const defaultIcon = locale.contentLanguageDirection === 'rtl' ? iconsMap.get( 'right' ) : iconsMap.get( 'left' );
+			// const defaultIcon = locale.contentLanguageDirection === 'rtl' ? iconsMap.get( 'right' ) : iconsMap.get( 'left' );
+			const defaultIcon = iconsMap.get( 'justify' );
 			const command: AlignmentCommand = editor.commands.get( 'alignment' )!;
 
 			// Change icon to reflect current selection's alignment.

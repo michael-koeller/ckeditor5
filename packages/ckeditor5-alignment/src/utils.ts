@@ -39,11 +39,15 @@ export function isSupported( option: string ): boolean {
 export function isDefault( alignment: string, locale: Locale ): boolean {
 	// Right now only LTR is supported so the 'left' value is always the default one.
 
+	// dermatest special: Change default alignment to 'justify'
+	/*
 	if ( locale.contentLanguageDirection == 'rtl' ) {
 		return alignment === 'right';
 	} else {
 		return alignment === 'left';
 	}
+	*/
+	return alignment === 'justify';
 }
 
 /**

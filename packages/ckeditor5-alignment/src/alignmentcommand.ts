@@ -42,7 +42,9 @@ export default class AlignmentCommand extends Command {
 		if ( this.isEnabled && firstBlock.hasAttribute( 'alignment' ) ) {
 			this.value = firstBlock.getAttribute( 'alignment' ) as SupportedOption;
 		} else {
-			this.value = locale.contentLanguageDirection === 'rtl' ? 'right' : 'left';
+			// dermatest special: Change default alignment to 'justify'
+			// this.value = locale.contentLanguageDirection === 'rtl' ? 'right' : 'left';
+			this.value = 'justify';
 		}
 	}
 
