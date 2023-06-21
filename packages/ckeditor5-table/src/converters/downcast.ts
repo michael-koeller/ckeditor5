@@ -168,7 +168,10 @@ export function convertParagraphInTableCell( options: { asWidget?: boolean } = {
 export function isSingleParagraphWithoutAttributes( modelElement: Element ): boolean {
 	const tableCell = modelElement.parent!;
 
-	const isSingleParagraph = tableCell.childCount == 1;
+	// dermatest special:
+	// we want to always force <p> tags within table cells.
+	// const isSingleParagraph = tableCell.childCount == 1;
+	const isSingleParagraph = false;
 
 	return isSingleParagraph && !hasAnyAttribute( modelElement );
 }
