@@ -14,12 +14,6 @@ export default class Whitespaces extends Plugin {
 	}
 
 	init() {
-		this.editor.keystrokes.set( 'ctrl+shift+space', ( key, stop ) => {
-			// console.log('ReportEditComponent.ngEditorOnReady()', 'Alt-space typed');
-			this.editor.execute( 'input', { text: NBSP } );
-			stop();
-		} );
-
 		this.editor.conversion.for( 'editingDowncast' ).add( dispatcher => {
 			dispatcher.on( 'insert:$text', ( evt, data, conversionApi ) => {
 				// Here should be an `if` that would check whether the feature's command is enabled.
